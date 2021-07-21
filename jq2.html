@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+        <title>Jquery</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">GRUPO 6</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">jQuery</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                jQuery Misc
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="jq1.html">jQuery The noConflict() Method</a></li>
+                                <li><a class="dropdown-item" href="jq2.html">jQuery Filters</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Datos
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Integrantes</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <ul>
+                                            <li class="list-group-item-light">Omar Gonzalez</li>
+                                            <li class="list-group-item-light">Henry Ordoñez</li>
+                                            <li class="list-group-item-light">Victor Pilco</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        
+        <section id="info">
+            <div class="container">
+                <br><h1 class="page-header">jQuery Filters</h1>
+                <div class="container">
+                   <p class="pa">Utilice jQuery para filtrar / buscar elementos específicos.</p>
+                    <div class="row ">
+                        <div class="col-md-4 ">
+                            <div class="p-3 mb-2 bg-warning text-dark">
+                                <h3>Tablas de filtros</h3>
+                                Realice una búsqueda que no distinga entre mayúsculas y minúsculas de elementos en una tabla:  <br><br>
+                                <img  class="img-fluid" id="JG" src="img/code5.png" alt="">
+                                <br><br>
+                                    <button type="button" class="btn btn-dark" id="toggletabla">
+                                        Pruebalo
+                                    </button>
+                                
+                            </div>    
+                        </div>
+                        <div class="col-md-4"> <div class="p-3 mb-2 bg-warning text-dark">
+                            <h3>Listas de filtros</h3>
+                            Realice una búsqueda que no distinga entre mayúsculas y minúsculas de los elementos de una lista: <br><br>
+                            <img  class="img-fluid" id="JG" src="img/code5.png" alt=""><br><br>
+                                <button type="button" class="btn btn-dark" id="toggleLista">
+                                    Pruebalo
+                                </button>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-4"> <div class="p-3 mb-2 bg-warning text-dark">
+                        <h3>Filtrar cualquier cosa</h3>
+                        Realice una búsqueda de texto que no distinga entre mayúsculas y minúsculas dentro de un elemento div: <br><br>
+                       
+                        <img  class="img-fluid" id="JG" src="img/code5.png" alt=""><br><br>
+                        <button type="button" class="btn btn-dark" id="toggleCulCosa">
+                            Pruebalo
+                        </button>
+                       
+                    </div>
+                </div>
+                    </div>
+
+
+                    <div class="row ">
+                        <div class="col-2"> </div>
+                        <div class="col-8 mt-5 p-3 mb-2 bg-warning text-dark text-center text-uppercase" id="tabla1" style="display: none">
+                            <h2>Filterable Table</h2>
+                            <p>Escriba algo en el campo de entrada para buscar en la tabla nombres, apellidos o correos electrónicos:</p>  
+                            <input id="myInput1" class="form-control" type="text" placeholder="Search..">
+                            <br><br>
+
+                            <table  class="table table-hover table-sm">
+                            <thead>
+                            <tr>
+                                <th>Firstname</th>
+                                <th>Lastname</th>
+                                <th>Email</th>
+                            </tr>
+                            </thead>
+                            <tbody id="myTable">
+                            <tr>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>john@example.com</td>
+                            </tr>
+                            <tr>
+                                <td>Mary</td>
+                                <td>Moe</td>
+                                <td>mary@mail.com</td>
+                            </tr>
+                            <tr>
+                                <td>July</td>
+                                <td>Dooley</td>
+                                <td>july@greatstuff.com</td>
+                            </tr>
+                            <tr>
+                                <td>Anja</td>
+                                <td>Ravendale</td>
+                                <td>a_r@test.com</td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            <br><br>
+                            <a href="https://www.w3schools.com/jquERy/tryit.asp?filename=tryjquery_filters_table" target="_blank">
+                                <button type="button" class="btn btn-dark" >
+                                    Codigo
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col-2"> </div>
+                    </div>
+                        <div class="row ">
+                        <div class="col-md-4"> </div>
+                        <div class="col-md-4"  id="Lista1" style="display: none"> 
+                        <div class="mt-5 p-3 mb-2 bg-warning text-dark  text-uppercase" >
+                            <h2 class="text-center">Filterable List</h2>
+                            <p>Escriba algo en el campo de entrada para buscar elementos específicos en la lista:</p>  
+                            <input id="myInput2" class="form-control" type="text" placeholder="Search..">
+                            <br>
+
+                            <ul id="myList">
+                                <li>First item</li>
+                                <li>Second item</li>
+                                <li>Third item</li>
+                                <li>Fourth</li>
+                            </ul>
+                            <div class="text-center">
+                            <a class="text-center" href="https://www.w3schools.com/jquERy/tryit.asp?filename=tryjquery_filters_list" target="_blank">
+                                <button type="button" class="btn btn-dark" >
+                                    Codigo
+                                </button>
+                            </a>
+                        </div>
+                        </div>
+                     </div>
+                     <div class="col-md-4"> </div>
+                    </div>  
+                     <div class="row ">
+                     <div class="col-md-4"> </div>
+                        <div class=" col-md-4 mt-5 p-3 mb-2 bg-warning text-dark  " id="CualCosa" style="display: none">
+                            <h2>Filter Anything</h2>
+                            <p>Escriba algo en el campo de entrada para buscar un texto específico dentro del elemento div con id = "myDIV":</p>
+                           
+                            <input  id="myInput3" class="form-control" type="text" placeholder="Search..">
+                       
+                            <div id="myDIV">
+                                <p>Soy un parrafo.</p>
+                                <div>Soy un elemento div dentro de div..</div>
+                                <button class="btn btn-dark">Soy un botón</button>
+                                <button class="btn btn-dark">Otro botón</button>
+                                <p>Otro párrafo.</p>
+                            </div>
+                            <div class="text-center ">
+                            <a class="text-center" href="https://www.w3schools.com/jquERy/tryit.asp?filename=tryjquery_filters_anything" target="_blank">
+                                <button type="button" class="btn btn-dark" >
+                                    Codigo
+                                </button>
+                            </a>
+                        </div>
+                        </div>
+                        <div class="col-md-4"> </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+        <footer class="bg-dark text-center text-white">
+            <div class="container p-4">
+                <section class="mb-4">
+                    <p>© 2021 Copyright: Los Henriis</p>
+                </section>
+            </div>
+        </footer>
+
+ 
+    </body>
+    
+    <script src="script.js"></script>
+</html>
